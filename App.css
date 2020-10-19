@@ -1,0 +1,71 @@
+a{
+  color: #282c34;
+  text-decoration: none;
+}
+body{
+  background-color:#fbfbf8;
+  height: 100%;
+  width: 100%;
+  display: inline;
+  flex-direction: column;
+}
+.App-logo {
+  height: 5vmin;
+  width: 5vmin;
+  margin-top: 0.5em;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+.App-link {
+  color: #61dafb;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#content{
+  width: 70%;
+  background-color: #fbfbf8;
+  overflow: hidden;
+}
+#blog{
+  width: 25%;
+  height: auto;
+  overflow-y: scroll;
+}
+#menu{
+  width: 10.65%;
+}
+div{
+
+}
+.wrapper{
+  display: flex;
+  height: 54em;
+  background-color: #fbfbf8;
+  color: #282c34;
+}
+.column{
+  flex-direction: column;
+}
+.smallCards{
+  display: none;
+  position: relative;
+}
+.bigCards{
+  display: flex;
+}
+.bigCards:hover .smallCards{
+  display: flex;
+  margin-left: 10%;
+}
+.space{
+  height: 10%;
+}
