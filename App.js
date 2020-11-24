@@ -74,12 +74,3 @@ function ContentSwitcher({c}){
 }
 
 export default App;
-
-{/*title="About Me" txt="I am a developer with a B.S. in Computer Science and a minor in Russian 
-                                                    from the University of North Georgia. My focus is full-stack web development, 
-                                                    using technologies such as React, NodeJS, HTML5/CSS3/Javascript, Rest APIs, and MySQL. 
-                                                    I also have experience in App Development, using React-Native, NodeJS, GraphQL/Hasura, 
-                                                    and PostGres to create the iOS app for the 501(c)3 charity 'Teens Tutor Teens'. 
-                                                    Python is my go to language for software development as well as some web applications 
-                                                    and scripting, and I have earned the Python Certified Associate Programmer certification 
-from the Python Institute."  infTitle="INFO" infTxt="lorem ip sum test info" infLink="www.github.com"/>*/}
