@@ -2,7 +2,7 @@ import React, {useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Chat } from './chat/Chat.js';
-import { about, projects, resume, contact } from './data.js';
+import { about, project, projects, resume, contact } from './data.js';
 
 function App() {
     const [cont, setCont] = useState('about');
@@ -40,6 +40,16 @@ function Content({title, txt, infTitle, infTxt, infLink}){
     )
 }
 
+function Project({title, desc, img}){
+    return(
+        <div>
+          <img src={img}/>
+          <h3>{title}</h3>
+          <p>{desc}</p>
+        </div>
+    )
+}
+
 
 function ContentSwitcher({c}){
   switch (c) {
@@ -47,7 +57,13 @@ function ContentSwitcher({c}){
       return <Content title={about.title} txt={about.txt} infTitle={about.infTitle} infTxt={about.infTxt} infLink={about.infLink}/>;
       break;
     case 'projects':
-      return <Content title={projects.title} txt={projects.txt} infTitle={projects.infTitle} infTxt={projects.infTxt} infLink={projects.infLink}/>;
+      return(<>
+              <Content click={project.id} title={project.title} txt={project.txt} infTitle={project.infTitle} infTxt={project.infTxt} infLink={project.infLink}/>
+              <div className="project-list">
+                {projects.map((p) => (
+                <div className="project" onClick={() => setCont(p.id)}><Project key={p.id} title={p.title} desc={p.desc} img={p.img}/></div>))}
+              </div>
+              </>)
       break;
     case 'resume':
       return <Content title={resume.title} txt={resume.txt} infTitle={resume.infTitle} infTxt={resume.infTxt} infLink={resume.infLink}/>;
@@ -55,8 +71,39 @@ function ContentSwitcher({c}){
     case 'contact':
       return <Content title={contact.title} txt={contact.txt} infTitle={contact.infTitle} infTxt={contact.infTxt} infLink={contact.infLink}/>;
       break;
+    case '0':
+      return <Content title={projects[0].title} txt={projects[0].desc} infTitle='More Info' infTxt='' infLink='https://github.com/ydocsgnillats/teenstutorteensapp/'/>;
+      break;
+    case '1':
+      return <Content title={projects[1].title} txt={projects[1].desc} infTitle='More Info' infTxt='' infLink='https://github.com/ydocsgnillats/bridget-bot'/>;
+      break;
+    case '2':
+      return <Content title={projects[2].title} txt={projects[2].desc} infTitle='More Info' infTxt='' infLink='https://github.com/ydocsgnillats/CollectionTracker'/>;
+      break;
+    case '3':
+      return <Content title={projects[3].title} txt={projects[3].desc} infTitle='Click Below To View Site' infTxt='' infLink='https://www.ydocsgnillats.com/watches'/>;
+      break;
+    case '4':
+      return <Content title={projects[4].title} txt={projects[4].desc} infTitle='Click Below To View Site' infTxt='' infLink='https://github.com/ydocsgnillats/teenstutorteensapp/'/>;
+      break;
+    case '5':
+      return <Content title={projects[5].title} txt={projects[5].desc} infTitle='Click Below To View Site' infTxt='' infLink='https://github.com/ydocsgnillats/teenstutorteensapp/'/>;
+      break;
+    case '6':
+      return <Content title={projects[6].title} txt={projects[6].desc} infTitle='More Info' infTxt='' infLink='https://github.com/ydocsgnillats/'/>;
+      break;
+    case '7':
+      return <Content title={projects[7].title} txt={projects[7].desc} infTitle='More Info' infTxt='' infLink='https://github.com/ydocsgnillats/'/>;
+      break;
+    case '8':
+      return <Content title={projects[8].title} txt={projects[8].desc} infTitle='More Info' infTxt='' infLink='https://github.com/ydocsgnillats/React-Portfolio'/>;
+      break;
+    case '9':
+      return <Content title={projects[9].title} txt={projects[9].desc} infTitle='Website can be found on "www.ydocsgnillats.com"' infTxt='' infLink='https://github.com/ydocsgnillats/portfolioWebsite'/>;
+      break;
+    
     default:
-      return null;
+      return <Content title={about.title} txt={about.txt} infTitle={about.infTitle} infTxt={about.infTxt} infLink={about.infLink}/>;;
   }
 }
   return (
